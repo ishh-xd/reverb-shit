@@ -18,10 +18,17 @@ client.on("ready",()=>{
 console.log("💀✨🥀")
 })
 
+const IshhRow = new ActionRowBuilder()
+.addComponents(
+ new ButtonBuilder()
+.setLabel('Get MoE')
+.setURL(`https://discord.com/oauth2/authorize?client_id=1074176927247630356&permissions=8&scope=bot`)		.setStyle(ButtonStyle.Link),)
+
 client.on("interactionCreate",async(interaction)=>{
 await interaction?.deferReply()
 await interaction?.channel?.send({
-embeds:[
+components:[IshhRow],
+  embeds:[
 new EmbedBuilder()
   .setTitle("Error")
   .setColor(`#ff0080`)
